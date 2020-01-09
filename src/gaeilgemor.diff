@@ -1,0 +1,183 @@
+*** gaeilge.aff	2005-03-09 11:13:12.000000000 -0600
+--- gaeilgemor.aff	2005-03-16 15:41:40.909736808 -0600
+***************
+*** 6,12 ****
+  nroffchars	().\\*
+  texchars	()\[]{}<\>\\$*.%
+  allaffixes on                         
+! compoundwords off
+  
+  # headers:char-sets
+  defstringtype "nroff" "nroff" ".mm" ".ms" ".me" ".man" ".NeXT"
+--- 6,12 ----
+  nroffchars	().\\*
+  texchars	()\[]{}<\>\\$*.%
+  allaffixes on                         
+! compoundwords on
+  
+  # headers:char-sets
+  defstringtype "nroff" "nroff" ".mm" ".ms" ".me" ".man" ".NeXT"
+***************
+*** 73,78 ****
+--- 73,79 ----
+  # h
+  flag H:
+   	[AEIOUÁÉÍÓÚ]	>	H
++  	[AEIOUÁÉÍÓÚ]	>	"H-"
+  	
+  #  m'
+  flag M:
+***************
+*** 300,311 ****
+--- 301,316 ----
+  	[^UI] A I M		>	-M,GÍ        # ordaitheach
+  	[^UI] A I M		>	IS           
+  	[^UI] A I M		>	-M,DÍS       
++ 	[^UIF] A I M		>	-AIM,FAD     # An B.N.
++ 	[^UIF] A I M		>	-AIM,FAIR    # An B.N.
+  
+  	[^EUTHI] A I M		>	-AIM,TAR     # láithreach saor
+  
+                                                       # grafaim, liteagrafaim
+  	F A I M			>	-M,DH        # fáistineach
+  	F A I M			>	-IM,R
++ 	F A I M			>	-IM,D        # An B.N.
++ 	F A I M			>	-M,R         # An B.N.
+  
+  						     # róstaim
+  	T A I M			>	-IM,R        # láithreach saor
+***************
+*** 327,332 ****
+--- 332,339 ----
+  	[OÁÓÚ] I M		>	-M,GÍ        # ordaitheach
+  	[OÁÓÚ] I M		>	-M,DÍS
+  	[OÁÓÚ] I M		>	IS
++ 	[OÁÓÚ] I M		>	-IM,FAD      # An B.N.
++ 	[OÁÓÚ] I M		>	-IM,FAIR     # An B.N.
+  
+  						     # buaim, iaim
+  	[IU] A I M		>	-IM,NN       # láithreach CB lch.98
+***************
+*** 339,344 ****
+--- 346,353 ----
+  	[IU] A I M		>	-M,GÍ        # ordaitheach
+  	[IU] A I M		>	IS
+  	[IU] A I M		>	-M,DÍS
++ 	[IU] A I M		>	-IM,FAD       # An B.N.
++ 	[IU] A I M		>	-IM,FAIR      # An B.N.
+  
+  	E A I M			>	-AIM,ITEAR   # glaeaim->glaeitear
+  
+***************
+*** 352,357 ****
+--- 361,368 ----
+  	[^AOÁÉÓÚ] I M		>	-M,GÍ        # ordaitheach
+  	[^AOÁÉÓÚ] I M		>	IS
+  	[^AOÁÉÓÚ] I M		>	-M,DÍS
++ 	[^AOÁÉÓÚ] I M		>	-IM,FEAD     # An B.N.
++ 	[^AOÁÉÓÚ] I M		>	-IM,FIR      # An B.N.
+  
+  	[^AOÁÉÓÚTH] I M		>	-IM,TEAR     # láithreach saor
+  
+***************
+*** 375,380 ****
+--- 386,393 ----
+  	É I M		>	-M,GÍ                # ordaitheach
+  	É I M		>	IS
+  	É I M		>	-M,DÍS
++ 	É I M		>	-M,FEAD              # An B.N.
++ 	É I M		>	-M,FIR               # An B.N.
+  
+  						     # guím
+  	Í M		>	-M,ONN               # láithreach CB lch.99
+***************
+*** 386,391 ****
+--- 399,406 ----
+  	Í M		>	-M,GÍ                # ordaitheach 
+  	Í M		>	IS
+  	Í M		>	-M,DÍS
++ 	Í M		>	-M,FEAD              # An B.N.
++ 	Í M		>	-M,FIR               # An B.N.
+  
+  	[^AOU] Í M		>	-ÍM,ITEAR
+    						     # cnaím, maím
+***************
+*** 418,423 ****
+--- 433,439 ----
+  	[^IUF] A I N N		>	-AINN,FAIDÍS
+  	[^IUF] A I N N		> 	-AINN,FAÍ
+  	[^IU] A I N N		>	-INN,DAR     # An B.N.
++ 	[^IU] A I N N		>	-INN,S       # An B.N.
+  
+  	[^EUTIH] A I N N		>	-AINN,TÁ     # gnáthchaite
+  	[^EUTIH] A I N N		>	-AINN,TAÍ     
+***************
+*** 463,468 ****
+--- 479,485 ----
+  	[IU] A I N N		>	-INN,FAIDÍS
+  	[IU] A I N N		> 	-INN,FAÍ
+  	[IU] A I N N		>	-INN,DAR     # An B.N.
++ 	[IU] A I N N		>	-INN,S       # An B.N.
+  
+  	E A I N N		>	-AINN,ITEÁ   # ghlaeainn->ghlaeiteá
+  	E A I N N		>	-AINN,ITÍ
+***************
+*** 479,484 ****
+--- 496,502 ----
+  	[^AOÁÉÓÚ] I N N		>	-INN,FIDÍS
+  	[^AOÁÉÓÚ] I N N		> 	-INN,FÍ
+  	[^AOÁÉÓÚ] I N N		>	-INN,EADAR    # An B.N.
++ 	[^AOÁÉÓÚ] I N N		>	-INN,EAS      # An B.N.
+  
+  	[^AOÁÉÓÚTH] I N N	>	-INN,TEÁ      # gnáthchaite
+  	[^AOÁÉÓÚTH] I N N	>	-INN,TÍ
+***************
+*** 509,514 ****
+--- 527,533 ----
+  	É I N N		>	-NN,FIDÍS
+  	É I N N		> 	-NN,FÍ
+  	É I N N		>	-INN,ADAR             # An B.N.
++ 	É I N N		>	-INN,AS               # An B.N.
+  
+  					              # ghuínn, d'fhínn
+  	Í N N		>	-NN,OMAR              # caite
+***************
+*** 522,527 ****
+--- 541,547 ----
+  	Í N N		>	-NN,FIDÍS
+  	Í N N		> 	-NN,FÍ
+  	Í N N		>	-NN,ODAR              # An B.N.
++ 	Í N N		>	-NN,OS                # An B.N.
+  
+  	[^AOU] Í N N		>	-ÍNN,ITEÁ
+  	[^AOU] Í N N		>	-ÍNN,ITÍ
+***************
+*** 589,594 ****
+--- 609,615 ----
+  	A Í N N		>	-AÍNN,ÓIDÍS
+  	A Í N N		>	-AÍNN,ÓFAÍ
+  	A Í N N		>	-NN,ODAR        # An B.N. 
++ 	A Í N N		>	-NN,OS          # An B.N. 
+  
+                                                  # bhailínn, d'áitínn
+  	[^A] Í N N	>	-NN,OMAR        # caite
+***************
+*** 604,609 ****
+--- 625,631 ----
+  	[^A] Í N N	>	-ÍNN,EOIDÍS
+  	[^A] Í N N	>	-ÍNN,EOFAÍ
+  	[^A] Í N N	>	-NN,ODAR        # An B.N. 
++ 	[^A] Í N N	>	-NN,OS          # An B.N. 
+  
+  flag *I:				       # campálaim
+          L A I M              >       -IM,NN          # láithreach
+***************
+*** 631,636 ****
+--- 653,659 ----
+          L A I N N              >       -AINN,FAIDÍS
+          L A I N N              >       -AINN,FAÍ
+          L A I N N              >       -INN,DAR        # An B.N.
++         L A I N N              >       -INN,S          # An B.N.
+                                                 # *****>>>>>> 
+  	L A I N N	       >       -LAINN,ILTEÁ    # gnáthchaite dara phearsa
+  	L A I N N	       >       -LAINN,ILTÍ     # gnáthchaite saor
