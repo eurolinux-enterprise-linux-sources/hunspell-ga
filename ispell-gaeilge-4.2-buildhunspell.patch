@@ -1,0 +1,26 @@
+diff -ru ispell-gaeilge-4.5/makefile ispell-gaeilge-4.5/makefile
+--- ispell-gaeilge-4.5/makefile	2010-07-31 16:21:50.000000000 +0100
++++ ispell-gaeilge-4.5/makefile	2010-07-31 16:22:04.000000000 +0100
+@@ -18,17 +18,15 @@
+ ALTAFFIXFILE=gaeilgemor.aff
+ INSTALL_DATA=$(INSTALL) -m 444
+ 
+-SORT=/usr/bin/sort -u
++SORT=sort -u
+ 
+-hashtable: $(INSTALLATION).hash
+-
+-all: gaeilge.hash gaeilgelit.hash gaeilgemor.hash
++all: ga_IE.dic
+ 
+ # grep -v filters out Malmö, São, LC_ALL=C needed!
+-gaeilge.hash: $(RAWWORDS) $(AFFIXFILE) $(PERSONAL)
++ga_IE.dic: $(RAWWORDS) $(AFFIXFILE) $(PERSONAL)
+ 	LC_ALL=C $(SORT) $(RAWWORDS) $(PERSONAL) | LC_ALL=C grep -v "[^'a-zA-ZáéíóúÁÉÍÓÚ/-]" | iconv -f utf8 -t iso-8859-1 > gaeilge.focail
+-	iconv -f utf8 -t iso-8859-1 $(AFFIXFILE) > tempaff.txt
+-	$(ISPELLBIN)/buildhash gaeilge.focail tempaff.txt gaeilge.hash
++	wc -l gaeilge.focail | cut -d ' ' -f 1 > ga_IE.dic
++	LC_ALL=C $(SORT) -f -t / --key 1,1 gaeilge.focail >> ga_IE.dic
+ 	rm -f gaeilge.focail tempaff.txt
+ 
+ gaeilgelit.hash: $(RAWWORDS) $(LITWORDS) gaeilgelit.aff $(PERSONAL)
