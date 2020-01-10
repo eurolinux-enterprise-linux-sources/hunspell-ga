@@ -1,7 +1,7 @@
 Name: hunspell-ga
 Summary: Irish hunspell dictionaries
 Version: 4.6
-Release: 6%{?dist}
+Release: 7%{?dist}
 Source0: http://gaelspell.googlecode.com/files/ispell-gaeilge-%{version}.tar.gz
 Source1: myspell-header
 Source2: hunspell-header
@@ -43,6 +43,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/myspell/*
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 4.6-7
+- Mass rebuild 2013-12-27
+
 * Tue May 28 2013 Caolán McNamara <caolanm@redhat.com> - 4.6-6
 - Resolves: rhbz#967637 encoding bustage
 
